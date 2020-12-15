@@ -34,7 +34,7 @@
     - Example 2:  
     ---
         schemaVersion: '2.2'
-        description: cross-platform sample
+        description: cross-platform 
         parameters:
           commands:
             type: "String"
