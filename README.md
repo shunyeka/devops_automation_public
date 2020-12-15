@@ -56,7 +56,6 @@
             - "echo \"$(Get-Date -format T) - DSA download started\""
             - "$sourceUrl=-join($managerUrl, \"software/agent/Windows/x86_64/agent.msi\")"
             - "echo \"$(Get-Date -format T) - Download Deep Security Agent Package\" $sourceUrl"
-            - "$ACTIVATIONURL=\"<dsm://agents.domain_name>/\""
             - "$WebClient = New-Object System.Net.WebClient"
             - "# Add agent version control info"
             - "$WebClient.Headers.Add(\"Agent-Version-Control\", \"on\")"
@@ -71,8 +70,7 @@
             - "Start-Sleep -s 50"
             - "& echo '...waiting for ready the connection'"
             - "& $Env:ProgramFiles\"\\Trend Micro\\Deep Security Agent\\dsa_control\" -r"
-            - "& $Env:ProgramFiles\"\\Trend Micro\\Deep Security Agent\\dsa_control\" -a $ACTIVATIONURL \"tenantID:0FA5-XXXXXX\" \"token:4FD7E8A2-XXXXXXXX\" \"policyid:X\" \"relaygroupid:XXX\""
-            - "#& $Env:ProgramFiles'\\Trend Micro\\Deep Security Agent\\dsa_control' -a <dsm://agents.domain_name>/ \"tenantID:0FA5-XXXXXX\" \"token:4FD7E8A2-XXXXXXXX\" \"policyid:X\" \"relaygroupid:XXX\""
+            - "& $Env:ProgramFiles'\\Trend Micro\\Deep Security Agent\\dsa_control' -a <dsm://agents.domain_name>/ \"tenantID:0FA5-XXXXXX\" \"token:4FD7E8A2-XXXXXXXX\" \"policyid:X\""
             - "Stop-Transcript"
             - "echo \"$(Get-Date -format T) - DSA Deployment Finished\""
         - action: aws:runShellScript
