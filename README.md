@@ -69,7 +69,7 @@
             - "echo \"$(Get-Date -format T) - DSA activation started\""
             - "Start-Sleep -s 50"
             - "& echo '...waiting for ready the connection'"
-            - "& $Env:ProgramFiles\"\\Trend Micro\\Deep Security Agent\\dsa_control\" -r"
+            - "& $Env:ProgramFiles'\\Trend Micro\\Deep Security Agent\\dsa_control' -r"
             - "& $Env:ProgramFiles'\\Trend Micro\\Deep Security Agent\\dsa_control' -a <dsm://agents.domain_name>/ \"tenantID:0FA5-XXXXXX\" \"token:4FD7E8A2-XXXXXXXX\" \"policyid:X\""
             - "Stop-Transcript"
             - "echo \"$(Get-Date -format T) - DSA Deployment Finished\""
