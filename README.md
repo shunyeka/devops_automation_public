@@ -28,7 +28,7 @@
             - "echo Install the agent package successfully"
             - "sleep 15"
             - "sudo /opt/ds_agent/dsa_control -r"
-            - "sudo /opt/ds_agent/dsa_control -a dsm://agents.deepsecurity.trendmicro.com:443/ 'tenantID:B3F16362-DE05-58B2-8564-7C6EE7C2D201' 'token:3671C592-2627-B08B-6345-97E8CD2FE657' 'policyid:1'"
+            - "sudo /opt/ds_agent/dsa_control -a <dsm://agents.domain_name>/ 'tenantID:B3F-XXXXXXXXX' 'token:367-XXXXXX' 'policyid:X'"
             
             
     - Example 2:  
@@ -56,7 +56,7 @@
             - "echo \"$(Get-Date -format T) - DSA download started\""
             - "$sourceUrl=-join($managerUrl, \"software/agent/Windows/x86_64/agent.msi\")"
             - "echo \"$(Get-Date -format T) - Download Deep Security Agent Package\" $sourceUrl"
-            - "$ACTIVATIONURL=\"dsm://agents.deepsecurity.trendmicro.com:443/\""
+            - "$ACTIVATIONURL=\"<dsm://agents.domain_name>/\""
             - "$WebClient = New-Object System.Net.WebClient"
             - "# Add agent version control info"
             - "$WebClient.Headers.Add(\"Agent-Version-Control\", \"on\")"
@@ -71,8 +71,8 @@
             - "Start-Sleep -s 50"
             - "& echo '...waiting for ready the connection'"
             - "& $Env:ProgramFiles\"\\Trend Micro\\Deep Security Agent\\dsa_control\" -r"
-            - "& $Env:ProgramFiles\"\\Trend Micro\\Deep Security Agent\\dsa_control\" -a $ACTIVATIONURL \"tenantID:0FA59FB6-961A-A931-C955-FA7258C3C898\" \"token:4FD7E8A2-9B90-83A2-2185-D5D1AC788747\" \"policyid:1\" \"relaygroupid:201\""
-            - "#& $Env:ProgramFiles'\\Trend Micro\\Deep Security Agent\\dsa_control' -a dsm://agents.deepsecurity.trendmicro.com:443/ \"tenantID:0FA59FB6-961A-A931-C955-FA7258C3C898\" \"token:4FD7E8A2-9B90-83A2-2185-D5D1AC788747\" \"policyid:1\" \"relaygroupid:201\""
+            - "& $Env:ProgramFiles\"\\Trend Micro\\Deep Security Agent\\dsa_control\" -a $ACTIVATIONURL \"tenantID:0FA5-XXXXXX\" \"token:4FD7E8A2-XXXXXXXX\" \"policyid:X\" \"relaygroupid:XXX\""
+            - "#& $Env:ProgramFiles'\\Trend Micro\\Deep Security Agent\\dsa_control' -a <dsm://agents.domain_name>/ \"tenantID:0FA5-XXXXXX\" \"token:4FD7E8A2-XXXXXXXX\" \"policyid:X\" \"relaygroupid:XXX\""
             - "Stop-Transcript"
             - "echo \"$(Get-Date -format T) - DSA Deployment Finished\""
         - action: aws:runShellScript
@@ -97,7 +97,7 @@
             - "echo Install the agent package successfully"
             - "sleep 15"
             - "sudo /opt/ds_agent/dsa_control -r"
-            - "sudo /opt/ds_agent/dsa_control -a dsm://agents.deepsecurity.trendmicro.com:443/ 'tenantID:B3F16362-DE05-58B2-8564-7C6EE7C2D201' 'token:3671C592-2627-B08B-6345-97E8CD2FE657' 'policyid:1'"
+            - "sudo /opt/ds_agent/dsa_control -a <dsm://agents.domain_name>/ 'tenantID:B3F-XXXXXXXXX' 'token:367-XXXXXX' 'policyid:X'"
         
                 
                 
